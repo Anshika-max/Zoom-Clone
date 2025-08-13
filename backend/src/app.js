@@ -12,7 +12,7 @@ const io = ConnectToSocket(server);     //It connects the socket with express se
 
 app.set("port",(process.env.PORT || 8000));
 app.use(cors({
-  origin: "http://localhost:5173",
+  origin: "https://mera-zoom.onrender.com",
   credentials: true,
 }));
 app.use(express.json({limit:"40kb"}));
