@@ -13,7 +13,16 @@ const server = createServer(app); // ✅ Now no conflict
 const io = ConnectToSocket(server);
 
 app.set("port", process.env.PORT || 8000);
-app.use(cors());
+app.use(cors({
+  origin: "https://mera-zoom.onrender.com", // your frontend URL
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true
+}));
+app.options("*", cors({
+  origin: "https://mera-zoom.onrender.com",
+  credentials: true
+}));
 app.use(express.json({ limit: "40kb" }));
 app.use(express.urlencoded({ limit: "40kb", extended: true }));
 
