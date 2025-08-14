@@ -18,10 +18,6 @@ app.use(cors({
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true
 }));
-app.options("*", cors({
-  origin: "https://mera-zoom.onrender.com",
-  credentials: true
-}));
 app.use(express.json({ limit: "40kb" }));
 app.use(express.urlencoded({ limit: "40kb", extended: true }));
 
