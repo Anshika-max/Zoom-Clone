@@ -3,7 +3,7 @@ const server = IS_PROD
 
     ?
 
-    "https://zoom-clone-backend-970g.onrender.com" 
+    "https://mera-zoombackend.onrender.com" 
     
     :
 
