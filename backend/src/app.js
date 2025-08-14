@@ -6,7 +6,7 @@ import mongoose from "mongoose";
 import { ConnectToSocket } from "./Controllers/SocketManager.js";
 
 import cors from "cors";
-import userRoutes from "./routes/users.routes.js";
+import userRoutes from "./Routes/users.Routes.js";
 
 const app = express();
 const server = createServer(app); // ✅ Now no conflict
