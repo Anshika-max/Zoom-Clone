@@ -15,7 +15,6 @@ const io = ConnectToSocket(server);
 app.set("port", process.env.PORT || 8000);
 app.use(cors({
   origin: "https://mera-zoom.onrender.com", // your frontend URL
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true
 }));
