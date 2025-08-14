@@ -1,13 +1,13 @@
 import { connections } from "mongoose";
 import { Server } from "socket.io";
+const allowedOrigin = "https://mera-zoom.onrender.com"; 
 
 export const ConnectToSocket = (server) =>{
     //In production we don't write this but for testing we write this.
     const io = new Server(server, {
         cors: {
-            origin: "*",
+            origin: allowedOrigin,
             methods: ["GET", "POST"],
-            allowedHeaders: ["*"],
             credentials: true
         }
     });
