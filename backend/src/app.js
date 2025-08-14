@@ -16,6 +16,7 @@ app.set("port", process.env.PORT || 8000);
 app.use(cors({
   origin: "https://mera-zoom.onrender.com", // your frontend URL
   allowedHeaders: ["Content-Type", "Authorization"],
+   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   credentials: true
 }));
 app.use(express.json({ limit: "40kb" }));
