@@ -274,7 +274,10 @@ export default function VideoMeetComponent() {
 
 
     let connectToSocketServer = () => {
-        socketRef.current = io.connect(server_url, { secure: false })
+        socketRef.current = io.connect(server_url, { 
+                transports: ["websocket", "polling"],
+                withCredentials: true
+         })
 
         socketRef.current.on('signal', gotMessageFromServer)
 
@@ -288,7 +291,7 @@ export default function VideoMeetComponent() {
                 setVideos((videos) => videos.filter((video) => video.socketId !== id))
             })
 
-            socketRef.current.on('user-joined', (id, clients) => {
+            socketRef.current.on('user-joined', (id, clients = []) => {
                 clients.forEach((socketListId) => {
 
                     connections[socketListId] = new RTCPeerConnection(peerConfigConnections)
