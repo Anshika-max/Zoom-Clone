@@ -29,9 +29,9 @@
 }
 
 .conferenceView { 
-
+    width: auto;
     display: flex;
-    
+    height: 35vh;
     padding: 10px;
     gap: 10px;
 }
