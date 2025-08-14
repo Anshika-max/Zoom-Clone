@@ -28,7 +28,7 @@ export const ConnectToSocket = (server) => {
 
             // Notify all users in the room
             connections[path].forEach((id) => {
-                io.to(id).emit("user-joined", socket.id);
+                io.to(id).emit("user-joined", socket.id,connections[path]);
             });
 
             // Send previous messages to new user
